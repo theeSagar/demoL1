@@ -1,4 +1,2 @@
-========++++
-heading file1
-========++++
+
 This is the first file that i am learning git.
