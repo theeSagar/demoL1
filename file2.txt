@@ -1,1 +1,2 @@
 This is file 2 of learning git after finishing file1.txt.
+Few images added in the sample_images that are of cars.
