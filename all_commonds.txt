@@ -1,0 +1,103 @@
+General commands
+
+1   ls-->list the content of the folder
+    ls file/folder_name -->will list what is inside that folder
+    ls-a --> shoes hidden files
+    Ex- ls Downloads/file_name
+2   PWD --> Present Working Directory
+
+3   start . --> will open (pop) the current file
+
+4   CD --> Change Directory
+    cd..(one level back)
+    cd folder_name
+
+5   touch file_.txt(extenction)--> will create the file #creates new files only
+    touch file1.txt file2.js --> will create multiple files
+
+6   mkdir -> creates folder
+    mkdir folder_name
+
+7   rm--> remove (permanently remove the file)  #removes files only
+    rm delete.txt
+
+8   rm -rf --> removes folder permanently
+
+# Git related commands--
+
+git status--> check the current git status like (On branch master)
+
+After working in a file--
+git add --> this will add the file and ready for commit (git add.)-> all files will be staged
+
+git commit -m (message)--> ask for a message to commit Changes
+**git commit -am ("message") --> this adds and commit 
+git log-->retrives all the commit history including hash
+git log --oneline --> will give one line commits 
+git commit --> will open VIM editor press i -> insert -> type your commit message -> esc key leave insert mode -> :wq ->to write and quit --> commit made.
+git commit --amend -->amending commits->a convenient way to modify the most recent commit
+    you made some chnages add and commit them, forgot to add one file that you worked on, so you now add that file (staged)then (git commit --amend ) this will get commited into the previous commit in with same flag (message).
+
+git branch --> shows new branchs
+git branch <branch_name> --> will create branch name
+git branch -m <old-branch_name new-branch_name> --> move/rename a branch{if we are on another branch}
+git branch -m <new-branch_name> --> move/rename a branch{if on the same branch}
+git switch <branch_name> --> will switch to the provided branch `new
+git switch -c <branch_name> --> will create and then switch to the provided branch_name `new
+** git checkout <branch> --> will switch to the provided branch `old but relible
+** git checkout -b <branch-name> --> will create and then switch to the provided branch_name
+
+-- Deleting the branch ------
+need to first switch to another branch then run delete commonds
+git branch -d <branch_name> -->(-d) to delete the branch safely(it will prevent deletion if the branch contains unmerged changes).
+git branch -D <branch_name> -> want to force delete a branch
+
+--- git commit message conventions----
+
+"feat" indicates that the commit introduces a new feature or functionality.
+"fix": for bug fixes
+"docs": for documentation updates
+"style": for code style changes (e.g., formatting, indentation)
+"refactor": for code changes that neither fix bugs nor add features but improve code quality or structure
+"test": for adding or modifying tests
+"chore": for maintenance tasks (e.g., updating dependencies)
+
+----- merging branch-------
+git merge <branch_name> 
+
+Fastforward Merges --
+**We merge to the current head head(where we currently are)branch
+    - checkout to the reciving branch(where you want to merge changes into)
+
+----Finding the diff-----
+
+git diff --> list all ythe changes in working Directory that are NOT stages for commit[compare staging area and working Directory].
+git diff head--> list all changes in the working tree since last commit.
+git diff --staged --> shows stages changes
+git diff <branch1><branch2> --> difference b/w two branch
+git diff <branch1>..<branch2> <file_name> --> to find the difference b/w two branch only for file_name.
+
+--- stash ----
+
+git stash -- > when your changes are not commited and want to switch to some other repo stash will save your changes 
+git stash pop --> after returning back to your repo pop will again insert the changes.
+
+-- detechting the heads---
+git checkout <commit-hash> --> detaches the HEAD from the current branch and points it to the specified commit. In this detached HEAD state, you can explore or make changes without affecting any branch.
+
+-- re attcahing heads -----
+—---Discarding changes/ reverting changes —-
+git checkout head <file_name> <filr_name>...→ This will revert back all the changes till the last commit.
+*git  restore <file_name> → will work same as above
+
+git restore –staged <file_name>--> this will revert the staged file (unstaged that file).
+
+git reset <commit-hash> →The branch moves back to the earlier commit erasing the further commit . It also moves the branch pointer backwards.
+git revert <commit-hash>-->
+
+
+— cloning —-
+Git clone <url>--> creates a folder and retrieves all the folders and file copy in my local.
+git remote -v → will give you the origin. 
+git remote add origin <url> → setting up the github repo to your local repo for the first time.
+git remote rename <old_name> <new_name> → rename the remote.
